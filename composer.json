@@ -1,0 +1,31 @@
+{
+    "name": "piotrpress/wpml-composer",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "description": "This composer plugin enables installation of WPML (WordPress Multilingual) plugin and its components.",
+    "homepage": "https://github.com/PiotrPress/wpml-composer",
+    "authors": [
+        {
+            "name": "Piotr Niewiadomski",
+            "homepage": "https://piotr.press"
+        }
+    ],
+    "keywords": [
+        "composer", "composer plugin", "WPML", "Multilingual", "wordpress", "plugin", "package", "packages", "php"
+    ],
+    "require": {
+        "php": ">=7.4",
+        "composer-plugin-api": "^2.0"
+    },
+    "extra": {
+        "class": "PiotrPress\\Composer\\WPML\\Plugin"
+    },
+    "autoload": {
+        "psr-4": {
+            "PiotrPress\\Composer\\WPML\\": "src/"
+        },
+        "classmap": [
+            "src"
+        ]
+    }
+}
