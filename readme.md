@@ -13,11 +13,15 @@ $ composer require wpml/woocommerce-multilingual:*
 
 ## Installation
 
-1. Add the plugin as a global composer requirement:
+You need to follow these steps only once to install the plugin:
+
+1. Provide WPML `user_id` and `subscription_key` from your [account](https://wpml.org/account/):
 
 ```shell
-$ composer global require piotrpress/wpml-composer
+$ composer config -g http-basic.wpml.org <user_id> <subscription_key>
 ```
+
+**NOTE:** using `-g` option is recommended to keep credentials outside of project's files.
 
 2. Allow the plugin execution:
 
@@ -25,13 +29,11 @@ $ composer global require piotrpress/wpml-composer
 $ composer config -g allow-plugins.piotrpress/wpml-composer true
 ```
 
-3. Provide WPML `user_id` and `subscription_key` from your [account](https://wpml.org/account/):
+3. Add the plugin as a global composer requirement:
 
 ```shell
-$ composer config --global http-basic.wpml.org <user_id> <subscription_key>
+$ composer global require piotrpress/wpml-composer
 ```
-
-**NOTE:** using `--global` option is recommended to keep credentials outside of project's files.
 
 ## Usage
 

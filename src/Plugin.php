@@ -11,8 +11,8 @@ class Plugin implements PluginInterface {
     const REPOSITORY = 'https://d2salfytceyqoe.cloudfront.net/wpml33-products.json';
 
     public function activate( Composer $composer, IOInterface $io ) : void {
-        if( ! $subscription_key = $composer->getConfig()->get( 'http-basic' )[ 'wpml.org' ][ 'username' ] ?? '' ) return;
-        if( ! $user_id = $composer->getConfig()->get( 'http-basic' )[ 'wpml.org' ][ 'password' ] ?? '' ) return;
+        if( ! $user_id = $composer->getConfig()->get( 'http-basic' )[ 'wpml.org' ][ 'username' ] ?? '' ) return;
+        if( ! $subscription_key = $composer->getConfig()->get( 'http-basic' )[ 'wpml.org' ][ 'password' ] ?? '' ) return;
 
         foreach( @\json_decode( @\file_get_contents( self::REPOSITORY ), true )[ 'downloads' ][ 'plugins' ] ?? [] as $package )
             $composer->getRepositoryManager()->addRepository( $composer->getRepositoryManager()->createRepository( 'package', [
